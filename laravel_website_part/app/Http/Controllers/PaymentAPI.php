@@ -30,7 +30,7 @@ class PaymentAPI extends Controller
         }
         return response()->json([
             'status' => $status,
-            'paymend_id' => $paymentId
+            'payment_id' => $paymentId
         ]);
     }
 }
