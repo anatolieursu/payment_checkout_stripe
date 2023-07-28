@@ -24,7 +24,7 @@ class CreateRequest extends FormRequest
     public function rules()
     {
         return [
-            'payment_name', 'payment_price' => 'required',
+            'payment_name', 'payment_price', 'user' => 'required',
         ];
     }
 }

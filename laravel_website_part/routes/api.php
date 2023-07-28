@@ -20,3 +20,5 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 Route::post('/create', [PaymentAPI::class, 'create']);
 
+// all payments by certain user
+Route::get('/get/{user}', [PaymentAPI::class, 'get']);

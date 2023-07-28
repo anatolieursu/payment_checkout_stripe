@@ -18,6 +18,7 @@ return new class extends Migration
             $table->string('payment_id')->unique();
             $table->string('payment_name');
             $table->integer('payment_price');
+            $table->string('user');
             $table->timestamps();
         });
     }
