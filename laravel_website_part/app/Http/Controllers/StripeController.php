@@ -26,8 +26,8 @@ class StripeController extends Controller
                 'quantity' => 1,
             ]],
             'mode' => 'payment',
-            'success_url' => 'http://localhost:4242/success',
-            'cancel_url' => 'http://localhost:4242/cancel',
+            'success_url' => 'http://127.0.0.1:8000/success',
+            'cancel_url' => 'http://127.0.0.1:8000/cancel',
         ]);
 
         header("HTTP/1.1 303 See Other");

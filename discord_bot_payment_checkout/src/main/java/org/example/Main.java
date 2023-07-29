@@ -13,6 +13,7 @@ import net.dv8tion.jda.api.interactions.commands.build.Commands;
 import net.dv8tion.jda.api.interactions.commands.build.OptionData;
 import net.dv8tion.jda.api.requests.GatewayIntent;
 import org.example.Commands.CreateCommand;
+import org.example.Commands.GetPayments;
 
 
 public class Main extends ListenerAdapter {
@@ -24,6 +25,7 @@ public class Main extends ListenerAdapter {
                 .addEventListeners(new Main())
                 .addEventListeners(new CreateCommand())
                 .addEventListeners(new AllCommands())
+                .addEventListeners(new GetPayments())
                 .enableIntents(GatewayIntent.MESSAGE_CONTENT)
                 .build();
         Guild guild = jda.getGuildById(1096672836153782362L);

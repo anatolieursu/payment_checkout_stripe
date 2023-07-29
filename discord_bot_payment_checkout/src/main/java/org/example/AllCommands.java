@@ -25,7 +25,8 @@ public class AllCommands extends ListenerAdapter {
         guild.updateCommands().addCommands(
                 Commands.slash("create", "Create a payment.")
                         .addOption(OptionType.STRING, "payment_name", "Add a name for your payment", true)
-                        .addOption(OptionType.INTEGER, "payment_price", "The payment quote.", true)
+                        .addOption(OptionType.INTEGER, "payment_price", "The payment quote.", true),
+                Commands.slash("get", "Get your Payments Gateaway")
         ).queue();
     }
 }
