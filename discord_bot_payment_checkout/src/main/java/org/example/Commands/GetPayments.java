@@ -21,7 +21,7 @@ public class GetPayments extends ListenerAdapter {
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event) {
         if(event.getName().equals("get")) {
-            String userName = event.getUser().getEffectiveName();
+            String userName = event.getUser().getName();
 
             event.deferReply().queue();
 
