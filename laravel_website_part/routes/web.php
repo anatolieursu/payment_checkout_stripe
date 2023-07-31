@@ -17,3 +17,5 @@ Route::get('/', function () {
     return view('welcome');
 });
 Route::get('/payment/{id}', [\App\Http\Controllers\StripeController::class, 'redirect']);
+Route::get("succes", [\App\Http\Controllers\StripeController::class, 'succes'])->name("checkout.succes");
+Route::get("cancel", [\App\Http\Controllers\StripeController::class, 'cancel'])->name("checkout.cancel");

@@ -13,7 +13,15 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create("orders", function(Blueprint $table) {
+            $table->id();
+            $table->unsignedBigInteger("payment_id");
+            $table->foreign("payment_id")->references("id")->on("payments");
+            $table->longText("sessionID");
+            $table->integer("price");
+            $table->string("status");
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists("orders");
     }
 };

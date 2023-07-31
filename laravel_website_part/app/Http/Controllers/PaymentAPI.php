@@ -20,7 +20,6 @@ class PaymentAPI extends Controller
                 "payment_name" => $request->payment_name,
                 "payment_price" => $request->payment_price,
                 "user" => $request->user,
-                "status" => 'unpaid'
             ]);
             $status = "VALID";
         } catch (Exception $exception) {
