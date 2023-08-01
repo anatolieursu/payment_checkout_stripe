@@ -22,3 +22,8 @@ Route::post('/create', [PaymentAPI::class, 'create']);
 
 // all payments by certain user
 Route::get('/get/{user}', [PaymentAPI::class, 'get']);
+
+// discord tickets payment
+Route::prefix("ticket")->group(function() {
+    Route::post("create", [\App\Http\Controllers\TicketAPI::class, 'create']);
+});

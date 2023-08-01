@@ -13,7 +13,14 @@ return new class extends Migration
      */
     public function up()
     {
-        //
+        Schema::create("tickets", function(Blueprint $table) {
+            $table->id();
+            $table->string("channelId");
+            $table->unsignedBigInteger("payment_id");
+            $table->foreign("payment_id")->references("id")->on("payments");
+            $table->string("ticket_status");
+            $table->timestamps();
+        });
     }
 
     /**
@@ -23,6 +30,6 @@ return new class extends Migration
      */
     public function down()
     {
-        //
+        Schema::dropIfExists("tickets");
     }
 };
