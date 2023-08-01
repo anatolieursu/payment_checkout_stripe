@@ -19,6 +19,7 @@ return new class extends Migration
             $table->string('payment_name');
             $table->integer('payment_price');
             $table->string('user');
+            $table->integer("buyers")->default(0);
             $table->timestamps();
         });
     }

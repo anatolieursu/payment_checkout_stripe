@@ -58,6 +58,9 @@ class StripeController extends Controller
             $order->status = "paid";
             $order->save();
 
+            $paymentId = $order->payment_id;
+            payment::where("id", $paymentId)->increment("buyers");
+
             return view("succes_page");
         } catch (\Exception $e) {
             throw new NotFoundHttpException;
