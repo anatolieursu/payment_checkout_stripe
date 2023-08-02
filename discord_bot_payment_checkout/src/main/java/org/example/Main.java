@@ -24,7 +24,7 @@ public class Main extends ListenerAdapter {
     public static JDA jda;
     public static void main( String[] args )
     {
-        jda = JDABuilder.createDefault("MTEzNDQwMTI0OTY1MjAwMjg2Ng.GyIxsx.TZ7C93UldVa75NRhW1CFsQIifK-pb3iFT52Nb8")
+        jda = JDABuilder.createDefault("TOKEN")
                 .setActivity(Activity.playing("orice"))
                 .addEventListeners(new Main())
                 .addEventListeners(new CreateCommand())
