@@ -26,4 +26,8 @@ Route::get('/get/{user}', [PaymentAPI::class, 'get']);
 // discord tickets payment
 Route::prefix("ticket")->group(function() {
     Route::post("create", [\App\Http\Controllers\TicketAPI::class, 'create']);
+    Route::post("payment", [\App\Http\Controllers\TicketAPI::class, 'paymentUpdate']);
+    Route::get("get", [\App\Http\Controllers\TicketAPI::class, "get"]);
+    Route::get("/certain", [\App\Http\Controllers\TicketAPI::class, "getCertain"]);
 });
+Route::get("/payment/get/{id}", [PaymentAPI::class, 'getCertainPayment']);

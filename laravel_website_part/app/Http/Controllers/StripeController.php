@@ -51,7 +51,7 @@ class StripeController extends Controller
             if(!$session) {
                 throw new NotFoundHttpException;
             }
-            $order = Order::where("sessionID", $session->id)->where("status", "unpaid")->get();
+            $order = Order::where("sessionID", $session->id)->where("status", "unpaid")->first();
             if(!$order) {
                 throw new NotFoundHttpException;
             }

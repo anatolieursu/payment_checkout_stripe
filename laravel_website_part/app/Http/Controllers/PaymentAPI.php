@@ -31,13 +31,20 @@ class PaymentAPI extends Controller
         }
         return response()->json([
             'status' => $status,
-            'payment_id' => $paymentId
+            'payment_id' => $paymentId,
+            'id' => $result->id
         ]);
     }
     public function get($user) {
         $allPaymentsByUser = payment::where('user', $user)->get();
         return response()->json([
             $allPaymentsByUser
+        ]);
+    }
+    public function getCertainPayment($id) {
+        $thePayment = payment::where("id", $id)->first();
+        return response()->json([
+            $thePayment
         ]);
     }
 }

@@ -13,7 +13,7 @@ class TicketPaymentUpdateReq extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class TicketPaymentUpdateReq extends FormRequest
     public function rules()
     {
         return [
-            //
+            "paymentId", "channelId" => 'required'
         ];
     }
 }

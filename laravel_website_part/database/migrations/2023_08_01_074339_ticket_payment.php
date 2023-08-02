@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create("tickets", function(Blueprint $table) {
             $table->id();
-            $table->string("channelId");
-            $table->unsignedBigInteger("payment_id");
+            $table->string("channelId")->unique();
+            $table->unsignedBigInteger("payment_id")->nullable();
             $table->foreign("payment_id")->references("id")->on("payments");
-            $table->string("ticket_status");
+            $table->string("ticket_status")->default("payment");
             $table->timestamps();
         });
     }
